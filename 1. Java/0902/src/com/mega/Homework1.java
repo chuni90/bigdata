@@ -1,4 +1,4 @@
-	
+package com.mega;
 
 import java.util.Scanner;
 
