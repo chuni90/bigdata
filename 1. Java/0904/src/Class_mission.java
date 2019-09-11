@@ -30,12 +30,19 @@ class Aircon {
 public class Class_mission {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		Aircon mega = new Aircon();
 		
 		mega.turnOn();
-		System.out.print(mega.degree);
+		System.out.println(mega.degree);
+		
+		Watch citizen = new Watch();
+		
+		System.out.println(citizen.timecheck(10,5));
+		
+		Phone gal = new Phone();
+		
+		gal.calling();
 		
 	}
 

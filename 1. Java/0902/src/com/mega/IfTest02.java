@@ -47,9 +47,16 @@ public class IfTest02 {
 		
 		// Date 패키지로부터 현재 시간 가져옴.
 		Date date = new Date();
-		int currentHour = date.getHours();
-		int currentMin = date.getMinutes();
-		System.out.println(currentHour+":"+currentMin);
+		int hour = date.getHours();
+		int min = date.getMinutes();
+		int sec = date.getSeconds();
+		
+		System.out.printf("현재 시간은 %d시 %d분 %d초 입니다.", hour, min, sec);
+		
+//		Date date = new Date();
+//		int currentHour = date.getHours();
+//		int currentMin = date.getMinutes();
+//		System.out.println(currentHour+":"+currentMin);
 	}
 
 }

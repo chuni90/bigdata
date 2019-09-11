@@ -21,8 +21,8 @@ public class While02 {
 		}
 		System.out.println("큰 수:"+x+" 작은 수 :"+y);
 					
-		while (y != 0 ) {
-			r = x % y ;
+		while (y != 0) {
+			r = x % y;
 			x = y;
 			y = r;
 		}

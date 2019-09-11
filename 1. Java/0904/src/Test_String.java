@@ -17,24 +17,28 @@ public class Test_String {
 		System.out.println(s3);
 		System.out.println(s4);
 		System.out.println("-----------------------");
+		
 		// == 은 문자비교가 아니라 **주소**를 비교한 것이기에, different가 반환됨.
 		if (s1 == s2) {
 			System.out.println("same");
 		}else 
 			System.out.println("differnt");
 		System.out.println("-----------------------");
+		
 		// char는 == 로 비교가 되네??
 		if (s3 == s4) {
 			System.out.println("char>> same");
 		}else 
 			System.out.println("char>> differnt");
 		System.out.println("-----------------------");
-		// equals(변수명) 으로 문자열을 비교함.
+		
+		// equals(변수명 또는 "문자열") 으로 문자열을 비교함.
 		if (s1.equals(s2)) {
 			System.out.println("same");
 		}else 
 			System.out.println("differnt");
 		System.out.println("-----------------------");
+		
 		// equals 메소드들 사용해보기
 		String bbc = "bbcde";
 		// 대소문자 상관없이 비교할 때, equalsIgnoreCase
@@ -63,8 +67,8 @@ public class Test_String {
  		
  		// 문자열을 숫자로 바꾸기 위해서 사용하는 class를 wrapper class라고 한다.
  		// int로 바꾸기 위해 Integer 클래스의 parseInt 메소드를 사용
- 		int i = Integer.parseInt("123");
- 		System.out.println(i);
+ 		int i = Integer.parseInt("2222");
+ 		System.out.println(i+1);
  		
  		// double로 바꾸기 위해 Double 클래스의 parseDouble 메소드를 사용함
  		double ii = Double.parseDouble("3.223");

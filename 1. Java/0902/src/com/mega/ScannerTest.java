@@ -9,9 +9,8 @@ public class ScannerTest {
 		int sum  = 0 ;
 		int sum2  = 0 ;
 		
-		// 입력받는 클래스 생성
+		// 입력받는 클래스 생성 = Scanner
 		// ctrl + shift + O 를 통해 필요한 패키지 자동으로 적용 가능(import가 안 되어있는데 적용된 코드로 작성되었을 때)
-		
 		Scanner input = new Scanner(System.in);
 		
 		System.out.println("가로를 입력하세요>> ");
