@@ -1,0 +1,94 @@
+<Action>
+VoteResult
+
+package mov.com.action;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import mov.com.svc.VoteResultService;
+import mov.com.util.ConsoleUtils;
+import mov.com.vo.JoinDTO;
+import mov.com.vo.MovieDTO;
+
+public class VoteResult implements Action {
+
+	@Override
+	public void execute(Scanner sc) {
+
+		VoteResultService vrsvc = new VoteResultService();
+		ArrayList<JoinDTO> list = vrsvc.voteResultShow();
+
+		if (list == null) {
+			System.out.println("등록된 영화정보가 존재하지 않습니다.");
+			return;
+		}
+
+		ConsoleUtils cu = new ConsoleUtils();
+		cu.showResult(list);
+	}
+
+}
+///////////////////////////////
+<SVC>
+VoteResultService
+
+
+package mov.com.svc;
+
+import java.util.ArrayList;
+
+import mov.com.vo.AccountDAO;
+import mov.com.vo.JoinDTO;
+import mov.com.vo.MovieDTO;
+
+public class VoteResultService {
+
+	public ArrayList<JoinDTO> voteResultShow(){
+		ArrayList<JoinDTO> list = null;
+		AccountDAO dao = new AccountDAO();
+		list = dao.selectResult();
+		
+		return list;
+	}
+}
+
+/////////////////////////////
+<Console - 메소드 추가>
+public void showResult(ArrayList<JoinDTO> list) {
+		System.out.println("영화별 투표수는 다음과 같습니다.▼ ");
+		for (int i = 0; i < list.size(); i++) {
+//			System.out.print("※투표수 "+ (i+1) + "위※ ");  // 투표수가 동일해도 순위가 다르게 나타나는 문제...
+			System.out.println(list.get(i));
+			System.out.println("---------------------------------------------------------------------------------");
+		}
+	}
+///////////////////////////
+<AccountDAO - 메소드 추가>
+
+public ArrayList<JoinDTO> selectResult() {
+		String sql = "SELECT m.id, m.title, COUNT(a.mymovie) as vote_count "
+				+ "FROM movie m, account a WHERE m.id = a.mymovie GROUP BY m.id, m.title " + "ORDER BY vote_count desc";
+		ArrayList<JoinDTO> list = new ArrayList<JoinDTO>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		JoinDTO dto = new JoinDTO(0, sql, 0);
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				dto = new JoinDTO(rs.getInt("id"), rs.getString("title"), rs.getInt("vote_count"));
+				list.add(dto);
+			}
+
+		} catch (Exception e) {
+			System.out.println("오류 발생 >" + e.getMessage());
+			e.printStackTrace();
+		} finally {
+			close(conn, pstmt, null);
+		}
+		return list;
+	}
