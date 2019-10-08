@@ -1,0 +1,11 @@
+package mov.com.svc;
+
+import mov.com.vo.MovieDAO;
+
+public class VoteService {
+
+	public void voteMovie(){
+		MovieDAO dao = new MovieDAO();
+		
+	}
+}

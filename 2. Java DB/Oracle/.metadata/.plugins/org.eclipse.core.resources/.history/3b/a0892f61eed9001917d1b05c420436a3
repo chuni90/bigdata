@@ -1,0 +1,49 @@
+package stu.com.util;
+
+import java.util.Scanner;
+
+import stu.com.vo.StudentDTO;
+
+public class ConsoleUtils {
+	
+	// 메뉴를 표시하고 사용자가 입력한 메뉴값을 되돌려 주는 메서드
+	public int showMenu(Scanner sc) {
+		System.out.println("== << MEGA 학적관리 프로그램 >>==");	
+		System.out.println("1. 학생 정보 등록");
+		System.out.println("2. 학생 정보 수정");
+		System.out.println("3. 학생 정보 출력");
+		System.out.println("4. 학생 정보 삭제");
+		System.out.println("5. 전체 정보 출력");
+		System.out.println("6. 프로그램 종료");
+		System.out.println("======================");
+		System.out.print("메뉴 = ");
+		return Integer.parseInt(sc.nextLine());
+	}
+	
+	
+	// 학생정보를 등록받아 객체화 한 후 되돌려주는 메서드
+	public StudentDTO make(Scanner sc) {
+		StudentDTO dto = null;
+		System.out.println("등록할 학생 정보를 입력해주세요.");
+		System.out.print("학번(X0000) = ");
+		String id = sc.nextLine();
+		System.out.print("이름 = ");
+		String name = sc.nextLine();
+		System.out.print("국어 점수 = ");
+		int kor = Integer.parseInt(sc.nextLine());
+		System.out.print("영어 점수 = ");
+		int eng = Integer.parseInt(sc.nextLine());
+		System.out.print("수학 점수 = ");
+		int math = Integer.parseInt(sc.nextLine());
+		return new StudentDTO(id, name, kor, eng, math);
+	}	
+	
+	public void addSuccess() {
+		System.out.println("학생 등록이 성공");
+	}
+	
+	public void addFail() {
+		System.out.println("학생 등록에 실패!!");
+	}
+	
+}

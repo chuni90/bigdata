@@ -1,0 +1,5 @@
+package stu.com.vo;
+
+public class StudentDTO {
+
+}

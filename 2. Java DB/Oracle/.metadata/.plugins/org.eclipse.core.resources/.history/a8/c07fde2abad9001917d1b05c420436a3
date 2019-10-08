@@ -1,0 +1,33 @@
+JDBC 프로그래밍
+
+1. 자바와 오라클 연동을 위한 작업 순서
+	1) 드라이버 로딩
+	class.forName("oracle.jdbc.driver.OracleDriver");
+	 → class를 import할 것이고 for name 이름을 이용해서 가져올 것이야.
+	
+	※ 예외(Exception) 처리
+		- 에러(Error) : 프로그램이 실행된 후에 발생하는 오류로 치명적인 상항.
+		- 예외(Exception) : 경미한 오류, 실행 전/컴파일 과정에서 오류가 발생할 것이라고 예측 가능한 오류
+			
+		- 예외문구 
+			throw : 개발자에 의해 강제로 예외를 발생시킬 때, 사용하는 문구
+			throws : 예외 전가
+			try - catch - finally : 예외 처리	
+			
+			try{
+				class.forName("oracle.jdbc.driver.OracleDriver");
+			}catch (ClassNotFoundException e) {
+				System.out.println("드라이버 로딩 실패");
+				System.out.println("오류 메시지: " + e.getMessage());
+			}
+					
+	
+	2) 연동객체 생성
+	
+	
+	3) 비즈니스 로직
+	
+	
+	4) 자원 닫기
+	
+	

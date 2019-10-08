@@ -1,0 +1,23 @@
+package mov.com.vo;
+
+import static mov.com.db.JdbcUtils.close;
+import static mov.com.db.JdbcUtils.getConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class SeatDAO {
+	
+	public ?? bookSeat() {
+		String sql = "UPDATE seat SET status = ?, user_id = ?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try{
+			conn = get
+		}catch() {
+			
+		}finally {
+			close(conn, pstmt, null);
+		}
+	}
+}

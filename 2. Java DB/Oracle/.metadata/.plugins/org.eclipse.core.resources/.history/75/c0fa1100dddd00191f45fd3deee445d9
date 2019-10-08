@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+</head>
+	<body>
+	<font size="6" color="green">NAVER</font>
+	<form method="post">
+		<b>아이디</b></br>
+		<input type="text" name="id" value="@naver.com"/><br>
+		<b>비밀번호</b></br>
+		<input type="text" name="password"/><br>
+		<b>비밀번호 재확인</b></br>
+		<input type="text" name="password_re"/><br>
+		<b>이름</b></br>
+		<input type="text" name="name"/><br>
+		<b>생년월일</b><br>
+		<input type="text" name="birth_year" value="년(4자)"/>
+		<select value = "월">
+			<option name = "brith_mon" value = "1월">1월</option>
+			<option name = "brith_mon" value = "2월">2월</option>
+			<option name = "brith_mon" value = "3월">3월</option>
+			<option name = "brith_mon" value = "4월">1월</option>
+			<option name = "brith_mon" value = "5월">2월</option>
+			<option name = "brith_mon" value = "6월">3월</option>
+			<option name = "brith_mon" value = "7월">1월</option>
+			<option name = "brith_mon" value = "8월">2월</option>
+			<option name = "brith_mon" value = "9월">3월</option>
+			<option name = "brith_mon" value = "10월">1월</option>
+			<option name = "brith_mon" value = "11월">2월</option>
+			<option name = "brith_mon" value = "12월">3월</option>
+		</select>
+				
+				
+
+
+	</form>
+	</body>
+</html>

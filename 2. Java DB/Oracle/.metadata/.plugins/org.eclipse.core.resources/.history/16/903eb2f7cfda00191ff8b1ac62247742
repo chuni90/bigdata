@@ -1,0 +1,30 @@
+package mov.com.vo;
+
+import static mov.com.db.JdbcUtils.*;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class AccountDAO {
+
+	public int voteMovie(AccountDTO dto) {
+		String sql = "UPDATE account SET mymoive = '1' WHERE id = ?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int check = 0;
+		
+		try {
+			conn =getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getId());
+			
+			check = pstmt.executeUpdate();
+		}catch(Exception e) {
+			System.out.println("오류 발생 >" + e.getMessage());
+			e.printStackTrace();
+		}finally {
+			close(conn, pstmt, null);
+		}
+		return check;
+	}
+}

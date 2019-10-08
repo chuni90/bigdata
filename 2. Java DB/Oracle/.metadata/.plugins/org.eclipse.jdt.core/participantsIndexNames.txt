@@ -1,0 +1,9 @@
+INDEX VERSION 1.130
+C:\Users\meganext\Desktop\Chun\Oracle\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1269180546.index
+\tutorial_04\src
+C:\Users\meganext\Desktop\Chun\Oracle\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\202633689.index
+\tutorial_02\src
+C:\Users\meganext\Desktop\Chun\Oracle\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1798591689.index
+\tutorial_03\src
+C:\Users\meganext\Desktop\Chun\Oracle\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2072847145.index
+\tutorial_01\src

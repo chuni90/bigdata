@@ -1,0 +1,62 @@
+package mov.com.vo;
+
+import static mov.com.db.JdbcUtils.close;
+import static mov.com.db.JdbcUtils.getConnection;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+public class AccountDAO {
+
+	public int voteMovie(String movieId, String userId) {
+		String sql = "UPDATE account SET mymovie = ? WHERE id = ?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int check = 0;
+		
+		try {
+			conn =getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, movieId);
+			pstmt.setString(2, userId);
+			check = pstmt.executeUpdate();
+		}catch(Exception e) {
+			System.out.println("오류 발생 >" + e.getMessage());
+			e.printStackTrace();
+		}finally {
+			close(conn, pstmt, null);
+		}
+		return check;
+	}
+
+	public ArrayList<MovieDTO> selectResult() {
+		String sql = "SELECT m.id, m.title, COUNT(a.mymovie) as vote_count "
+				+ "FROM movie m, account a WHERE m.id = a.mymovie GROUP BY m.id, m.title";
+		ArrayList<MovieDTO> list = new ArrayList<MovieDTO>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		MovieDTO dto = null;
+		
+		try {
+			conn =getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+	               dto = new MovieDTO(rs.getInt("id"),
+	                               rs.getString("title"),
+	                               rs.getInt("vote_count"));
+	               list.add(dto);
+	         }
+			
+		}catch(Exception e) {
+			System.out.println("오류 발생 >" + e.getMessage());
+			e.printStackTrace();
+		}finally {
+			close(conn, pstmt, null);
+		}
+		return list;
+	}
+}

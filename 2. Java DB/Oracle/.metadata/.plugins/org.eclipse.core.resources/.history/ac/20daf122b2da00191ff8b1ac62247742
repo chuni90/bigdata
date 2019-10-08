@@ -1,0 +1,12 @@
+package mov.com.action;
+
+import java.util.Scanner;
+
+public class ShowAction implements Action {
+
+	@Override
+	public void execute(Scanner sc) {
+		// 
+	}
+
+}

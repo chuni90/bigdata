@@ -1,0 +1,19 @@
+package mov.com.svc;
+
+import mov.com.vo.AccountDAO;
+import mov.com.vo.AccountDTO;
+import stu.com.vo.StudentDAO;
+import stu.com.vo.StudentDTO;
+
+public class VoteService {
+
+	public boolean vote(AccoutDTO newAccount) {
+		AccountDAO dao = new AccountDAO();
+		int check = dao.voteMovie(newAccount);
+		
+		if (check <1)
+			return false;
+		else
+			return true;
+	}
+}

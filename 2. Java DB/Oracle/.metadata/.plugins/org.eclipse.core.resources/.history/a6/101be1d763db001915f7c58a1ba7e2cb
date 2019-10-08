@@ -1,0 +1,14 @@
+package mov.com.action;
+
+import java.util.Scanner;
+
+public class VoteResult implements Action {
+
+	@Override
+	public void execute(Scanner sc) {
+		
+		public 
+
+	}
+
+}

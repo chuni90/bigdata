@@ -1,0 +1,21 @@
+package mov.com.svc;
+
+import mov.com.vo.SeatDAO;
+import mov.com.vo.SeatDTO;
+
+public class SeatService {
+
+	public boolean book(String seat_id, String userId) {
+//		SeatDTO dto = null;
+		int check;
+		SeatDAO dao = new SeatDAO();
+		
+		check = dao.bookSeat(seat_id, userId);
+		if (check < 1) 
+			return false;
+		return true;
+	}
+	
+	
+	
+}

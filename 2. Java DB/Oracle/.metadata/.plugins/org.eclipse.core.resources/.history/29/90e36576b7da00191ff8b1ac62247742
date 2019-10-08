@@ -1,0 +1,5 @@
+package mov.com.vo;
+
+public class MovieDTO {
+
+}

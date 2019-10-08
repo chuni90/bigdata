@@ -1,0 +1,13 @@
+package mov.com.svc;
+
+import mov.com.vo.AccountDAO;
+import mov.com.vo.AccountDTO;
+
+public class VoteService {
+
+	public AccountDTO voteMovie(String id) {
+		AccountDAO dao = new AccountDAO();
+		AccountDTO dto = ;
+		
+	}
+}

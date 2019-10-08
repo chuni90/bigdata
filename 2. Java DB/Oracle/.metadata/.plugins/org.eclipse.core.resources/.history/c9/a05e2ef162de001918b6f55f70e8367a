@@ -1,0 +1,13 @@
+package servlet.lifecycle;
+
+import javax.servlet.http.HttpServlet;
+
+/*
+ * 서블릿 규약서
+ * 1. 사용자가 만든 서블릿파일은 HttpServlet 클래스를 상속받아 구현한다.
+ * 2. doGet()rhk doPost()를 오버라이딩 한다.
+ */
+
+public class LifeCycleServlet extends HttpServlet{
+	
+}

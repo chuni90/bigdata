@@ -1,0 +1,70 @@
+JDBC
+
+JDBC (Java DataBase Connection) : 자바와 오라클 연동
+
+1. 데이터베이스(DataBase) => DBMS(DataBase ManagerMent System)
+
+  1) DMBS : DB소프트웨어 => MySQL, Oracle, MiriaDB, MongoDB
+  	- 관계형데이터베이스(ER) : Table(표)형태로 구현
+  	- 행(Record, Tuple, Row) : 객체
+  	- 열(Attribute, Field, Column) : 속성
+  		(열의 집합을 domain이라고도 함)
+  		
+  		
+  2) SQL(Query, 쿼리) 명령어
+  	- DDM(정의어, Data Definition Language) : CREATE(생성), ALTER(변경), DROP(제거)
+  	- DML(조작어, Data Manipulation Language) : CRUD(Create Read Update Delete)
+  										SELECT(추출), INSERT(삽입), UPDATE(수정), DELETE(삭제)
+  	- DCL(제어어, Data Control Language) : 무결성, 일관성, 병행수행, 권한
+  										COMMIT, ROLLBACK, GRANT(권한 부여), REVOKE(권한 제거)
+  										
+	
+  3) SQLPLUS 명령어 => Oracle에만 사용 가능한 접속 관련 명령어
+////////////////////////////////////////////////////////////////////////////
+# 책은 ch03부터 살펴보기
+
+1. 새로운 데이터베이스 사용자 계정을 생성하는 방법
+  - 반드시 관리자 계정/권한에서 작업해야 한다.
+  	SQL > conn system/1234          	// conn sql+ 명령어라서 ; 없음
+  	SQL > CREATE user 계정명 identified by 비밀번호;  
+  		  CREATE big_java identified by 1234;  // 이 계정에 권한은 없으므로 권한 부여가 필요
+  		  CREATE table
+  		  CREATE view
+  		  CREATE sequence
+
+	SQL > GRANT connect, resource, dba to big_java;  //접속권한, 자원, 관리자 권한까지 준다는 뜻 
+	SQL > conn big_java/1234 		  
+	
+  - 테이블을 생성하는 작업
+  	CREATE table 테이블명(name varchar2(20), age number, phone char(13));
+  	
+  - 테이블의 구조를 확인하는 작업
+  	DESC 테이블명
+
+2. CRUD = DML(조작어), 사용자와 DB의 커뮤니케이션을 담당한다
+		: Select, Insert, Delete, Update
+
+  - row 삽입
+  	INSERT into 테이블명 (필드명1, 필드명2, ...) values(값1, 값2, ...)
+  	INSERT INTO member (name, age, phone) values('hong', 11, '010-1111-1234');
+  	INSERT INTO member values('kang', 22, '010-2222-2222');  // 열(필드)를 모두 채울 때 사용
+  	INSERT INTO member (name, age) values('banana', 33);	 // 특정 열만 채울 때 사용(열을 괄호안에 넣음)
+  	
+  - Select : 레코드 검색/추출
+  	SELECT 필드명
+  	FROM 테이블명
+  	WHERE 조건식;
+  	
+  - Update : 레코드 수정
+  	UPDATE 테이블명
+  	set 변경식
+  	where 조건식;
+  	
+  - Delete : 레코드 삭제
+  	DELETE 필드명
+  	FROM 테이블명
+  	WHERE 조건식;
+  	//////////EX ///////
+  	DELETE FROM 테이블명;  모든 행을 삭제하는 명령어, *을 빼야함.
+  	DELETE * 
+  	

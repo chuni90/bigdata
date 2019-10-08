@@ -1,0 +1,4 @@
+create table Movie(id number primary key, title varchar2(20) not null,
+	distributor varchar2(20) not null, release varchar2(20), director varchar2(20));
+	
+select * from Movie;

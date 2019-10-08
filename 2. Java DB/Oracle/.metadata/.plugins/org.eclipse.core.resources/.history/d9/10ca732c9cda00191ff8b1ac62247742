@@ -1,0 +1,29 @@
+package stu.com.action;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import stu.com.svc.ShowService;
+import stu.com.util.ConsoleUtils;
+import stu.com.vo.StudentDAO;
+import stu.com.vo.StudentDTO;
+
+public class ShowAction implements Action {
+
+	@Override
+	public void execute(Scanner sc) {
+		/*
+		 * 전체 학생 정보를 불러온다.
+		 */
+		ConsoleUtils cu = new ConsoleUtils();
+		ShowService showsvc = new ShowService();
+		showsvc = cu.show(list);
+		
+		if(showsvc) {
+			System.out.println("전수 보여주기");
+		}else
+			System.out.println("호출 실패");
+		
+	}
+
+}

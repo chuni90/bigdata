@@ -1,0 +1,14 @@
+DROP TABLE movie;
+
+CREATE table movie (
+	id number PRIMARY KEY,
+	title varchar2(20) NOT NULL,
+	country varchar2(20) NOT NULL,
+	release varchar2(20) default '0000.00.00',
+	director varchar2(20));
+	
+INSERT INTO movie values (1, 'EXIT', 'KOR', '2019.08.01', '승현');
+INSERT INTO movie values (2, 'Avengers', 'USA', '2011.05.11', '정민');
+INSERT INTO movie values (3, 'Inception', 'USA', '2015.11.12', '은비');
+
+SELECT * FROM movie;

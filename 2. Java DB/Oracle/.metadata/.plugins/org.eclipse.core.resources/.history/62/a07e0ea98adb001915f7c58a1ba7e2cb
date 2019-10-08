@@ -1,0 +1,19 @@
+package mov.com.svc;
+
+import mov.com.vo.SeatDAO;
+import mov.com.vo.SeatDTO;
+
+public class SeatService {
+
+	public String book(String seat_id) {
+		SeatDTO dto = null;
+		SeatDAO dao = new SeatDAO();
+		
+		dto = dao.bookSeat();
+		
+		return dto;
+	}
+	
+	
+	
+}

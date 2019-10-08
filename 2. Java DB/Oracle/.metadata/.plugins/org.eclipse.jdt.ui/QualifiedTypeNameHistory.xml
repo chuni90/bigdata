@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+<fullyQualifiedTypeName name="java.net.ConnectException"/>
+<fullyQualifiedTypeName name="stu.com.vo.StudentDTO"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="stu.com.util.ConsoleUtils"/>
+<fullyQualifiedTypeName name="stu.com.vo.StudentDAO"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="stu.com.action.ViewAction"/>
+<fullyQualifiedTypeName name="stu.com.controller.FrontController"/>
+<fullyQualifiedTypeName name="mov.com.util.ConsoleUtils"/>
+<fullyQualifiedTypeName name="mov.com.action.Action"/>
+<fullyQualifiedTypeName name="mov.com.action.ShowAction"/>
+<fullyQualifiedTypeName name="mov.com.svc.VoteService"/>
+<fullyQualifiedTypeName name="mov.com.vo.AccountDTO"/>
+<fullyQualifiedTypeName name="mov.com.action.Seat"/>
+<fullyQualifiedTypeName name="mov.com.action.MyMovieAction"/>
+<fullyQualifiedTypeName name="mov.com.vo.AccountDAO"/>
+<fullyQualifiedTypeName name="mov.com.vo.MovieDTO"/>
+<fullyQualifiedTypeName name="mov.com.action.VoteAction"/>
+<fullyQualifiedTypeName name="mov.com.action.VoteResult"/>
+<fullyQualifiedTypeName name="mov.com.vo.JoinDTO"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletException"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="java.io.DataInputStream"/>
+<fullyQualifiedTypeName name="java.nio.charset.Charset"/>
+<fullyQualifiedTypeName name="java.io.DataOutputStream"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="mms.model.MemberDTO"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="mms.svc.MemberService"/>
+</qualifiedTypeNameHistroy>

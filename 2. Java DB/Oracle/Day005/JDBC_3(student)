@@ -1,0 +1,57 @@
+프로젝트명 : 학적관리 프로그램
+프로젝트 개요 : 수강생들의 성적정보를 입력받아 처리한 후, 원하는 작업을 수행하여 그 결과를 추출하는 프로그램
+
+작업 순서
+	1. 데이터베이스 설계 : 테이블
+		CREATE TABLE student(
+			id varchar2(10) PRIMARY KEY,	// 학생들의 학번
+			name varchar2(20) NOT NULL,		// 학생 이름
+			kor number default 0,			// 초기값이 0이라는 의미
+			eng number default 0,
+			math number default 0
+		);
+		
+	2. 패키지 및 클래스의 구성
+		1) stu.com.db : 공통의 데이터베이스 관련 작업을 수행하는 객체를 담을 패키지
+			- JdbcUtils.java (드라이버 로딩, 연동 객체, 자원 관리 등)
+			
+		2) stu.com.vo : Model
+			- studentDTO.java : '한 명의 학생'에 대한 정보를 객체화하는 클래스 (Database Transition Object)
+			- studentDAO.java : CRUD의 쿼리를 담아서 관리하는 클래스 (Database Access Object)
+			
+		3) stu.com.action
+			- Action interface (추후 하위 클래스가 어떤 클래스를 상속 받을 수도 있으니 인터페이스로 구현함)
+				- AddAction.java : 새로운 학생을 등록하는 작업을 수행하는 클래스
+				- ModifyAction.java : 등록된 학생 정보를 수정하는 작업을 수행하는 클래스
+				- ViewAction.java : 전체 학생의 정보를 출력하는 작업을 수행
+				- DetailAction.java : 한 명의 학생에 대한 정보를 출력
+				- RemoveAction.java : 학생 정보를 삭제하는 작업을 수행
+				
+		4) stu.com.controller
+			- FrontController.java : 프로그램 전체 흐름을 관리할 목적으로 구현하는 클래스
+			
+		5) stu.com.svc : 기능(Action)이 5개라면 서비스도 5개여야 한다. 서비스는 액션의 실제 수행을 직접하는 역할
+			- AddService.java
+			- ModifiSevice.java
+			- ViewSevice.java
+			- DetailSevice.java
+			- RemoveSevice.java
+		
+		6) stu.com.util : VIEW 역할, 화면을 통해 사용자와 프로그램의 인터페이스를 담당하는 클래스
+			- ConsoleUtils.java : 사용자가 직접 보고 뭔가를 하는 것??
+		
+		7) stu.com.process
+			- MainProcessor.java
+				
+	3. 입출력 형식
+		== < 학적 관리 프로그램 > ==
+		1. 학생 정보 등록
+		2. 학생 정보 수정
+		3. 학생 정보 출력
+		4. 전체 정보 출력
+		5. 학생 정보 삭제
+		6. 프로그램 종료
+		======================
+		메뉴 = 
+		
+		

@@ -1,0 +1,56 @@
+package mov.com.process;
+
+import java.util.Scanner;
+
+import mov.com.action.Action;
+import mov.com.action.AddAction;
+import mov.com.action.AddJoinAction;
+import mov.com.action.InfoAction;
+import mov.com.action.ModifyAction;
+import mov.com.action.MyMovieAction;
+import mov.com.action.RemoveAction;
+import mov.com.action.Seat;
+import mov.com.action.ShowAction;
+import mov.com.action.ViewAction;
+import mov.com.action.VoteAction;
+import mov.com.controller.FrontController;
+import mov.com.util.ConsoleUtils;
+
+public class MainProcessor {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int menu=0;
+		
+		ConsoleUtils cu = new ConsoleUtils();
+		FrontController fc = new FrontController();
+		Action action = null;
+		String login =null;
+		   
+		   while(true) {
+		      //제일기본창
+		      menu = cu.showLogin0(sc);
+		      
+		      switch(menu) {
+		      
+		      case 1:
+		         action = new  AddJoinAction();
+		         break;
+		      
+		      case 2:
+		      {System.out.print("아이디 = ");
+		      String id = sc.nextLine();
+		      
+		      
+		         if(id.equals("admin")) {
+		            cu.showMenu(sc);
+		         }
+		         cu.showMenu1(sc);
+		         break;
+		      }
+		      
+		      default: 
+		         System.out.println("선택이 올바르지 않습니다");
+		         
+		      }
+		      

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>메뉴 상세 설명문</title>
+		<style type="text/css">
+		/* 태그 선택자	*/
+		body{
+			backgroud-color:rgb(255, 99, 71); 배경색 지정
+		}
+		</style>
+	</head>
+	<body>
+	
+	</body>
+</html>

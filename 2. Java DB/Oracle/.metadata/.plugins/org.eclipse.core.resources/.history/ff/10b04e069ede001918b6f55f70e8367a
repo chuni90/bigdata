@@ -1,0 +1,5 @@
+package mms.action;
+
+public class ShowAllMemberServlet {
+
+}

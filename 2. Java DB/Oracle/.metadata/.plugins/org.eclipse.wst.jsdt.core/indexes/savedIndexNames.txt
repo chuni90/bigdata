@@ -1,0 +1,11 @@
+INDEX VERSION 1.4+C:\Users\meganext\Desktop\Chun\Oracle\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2684861596.index
+1701076302.index
+4152436660.index
+3496822803.index
+1231296937.index
+3260657320.index
+1269180546.index
+928308036.index
+1046686015.index
+3400770000.index

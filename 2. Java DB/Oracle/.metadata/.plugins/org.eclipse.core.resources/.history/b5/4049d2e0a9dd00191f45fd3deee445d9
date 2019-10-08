@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Menu</title>
+	</head>
+	<body>
+	<!--
+		<p> : p는 paragraph, 단락태그
+		<br> : Eneter, 줄바꿈 태그
+		<b> : bolder, 글자 진하게
+		<i> : italic, 기울임
+		<u> : underline, 밑줄
+		<font> : 글꼴과 관련된 태그
+			- 속성(attribute) : size
+		-->
+	<b><i><font size="5"> &nbsp;안녕하세요, 메가넥스트 카페입니다.</font></i></b><br>
+		<font size = "4" color = "blue"> 항상 좋은 재료로 맛있는 커피를 제공하겠슴다.</font>
+		<hr>
+		저희가 제공하는 메뉴<br>
+		<ul>
+			<li>아이스 카페</li>
+			<li>아이스 모카</li>
+			<li>아메리카노</li>
+			<li>아이스 카푸치노</li>
+		</ul>
+		
+	</body>
+</html>

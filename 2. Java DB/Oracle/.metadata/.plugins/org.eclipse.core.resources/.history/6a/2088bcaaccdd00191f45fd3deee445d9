@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>tutorial_01</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- 서블릿을 등록하는 영역 || 서버와 클라이언트 양 쪽에 똑!같!이 등록해야 -->
+
+	<!-- 서버에 등록하는 작업 -->
+	<servlet>
+		<servlet-name>Greeting</servlet-name>
+
+		<servlet-class>tutorial_01.HelloWorld</servlet-class>  <!-- 서블릿으로 사용될 클래스 이름을 등록한다. -->
+
+	</servlet>
+
+	<!-- Client에 등록하는 작업 -->
+	<servlet-mapping>
+		<servlet-name>Greeting</servlet-name>
+
+		<!-- http://www.naver.com/hi <-- hi가 url 매핑임.  -->
+		<!-- Client가 웹서버를 호출할 때, 가장 먼저 web xml이 불려가고 그때 url 매핑을 보고 서버에다가 해당 서버릿을 가져오라고 명령함 -->
+		<url-pattern>/hi</url-pattern>
+
+	</servlet-mapping>
+
+</web-app>

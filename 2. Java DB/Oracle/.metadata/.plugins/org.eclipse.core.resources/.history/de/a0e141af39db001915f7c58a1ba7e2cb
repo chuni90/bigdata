@@ -1,0 +1,15 @@
+package mov.com.process;
+
+import java.util.Scanner;
+
+import mov.com.action.Action;
+
+public class Seat implements Action {
+
+	@Override
+	public void execute(Scanner sc) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

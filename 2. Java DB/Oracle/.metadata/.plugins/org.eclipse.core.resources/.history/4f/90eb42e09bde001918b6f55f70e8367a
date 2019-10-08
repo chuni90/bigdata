@@ -1,0 +1,18 @@
+package mms.svc;
+
+import java.util.ArrayList;
+
+import mms.model.MemberDTO;
+
+public class MemberService {
+	
+	public MemberDTO searchMemberById(String id) {
+		
+	}
+	
+	
+	public ArrayList<MemberDTO> showAllMember() {
+		
+	}
+	
+}

@@ -1,0 +1,28 @@
+--Join 연습
+CREATE table aaa(
+	a1 varchar2(10) not NULL,
+	a2 varchar2(10) not NULL,
+	a3 varchar2(10) NOT NULl
+);
+
+INSERT INTO aaa values ('111', 'kim', 'kor');
+INSERT INTO aaa values ('222', 'lee', 'eng');
+INSERT INTO aaa values ('333', 'park', 'math');
+
+
+CREATE table bbb(
+	a1 varchar2(10) NOT NULL,
+	b1 varchar2(10) NOT NULL,
+	b2 varchar2(10)
+);
+
+INSERT INTO bbb values ('111', 'AAA', 'BBB');
+INSERT INTO bbb values ('333', 'CCC', 'DDD');
+INSERT INTO bbb values ('444', 'EEE', 'FFF');
+
+SELECT * FROM aaa;
+SELECT * FROM bbb;
+
+SELECT aaa.a1, bbb.b1, bbb.b2
+FROM aaa, bbb
+WHERE aaa.a1 = bbb.a1;

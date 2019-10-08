@@ -1,0 +1,41 @@
+package stu.com.vo;
+import static stu.com.db.JdbcUtils.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+/*
+ * CRUD와 관련된 명령어를 모아서 처리하는 객체
+ *  INSERT, SELECT, UPDATE, DELETE
+ */
+
+public class StudentDAO {
+	
+	// 학생정보를 DB에 등록하는 메서드
+	public int makestudent(StudentDTO dto) {
+		String sql = "INSERT INTO student values(?, ?, ?, ?, ?)";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		int check = 0;
+		
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getId());
+			pstmt.setString(2, dto.getName());
+			pstmt.setInt(3, dto.getKor());
+			pstmt.setInt(4, dto.getEng());
+			pstmt.setInt(5, dto.getMath());
+			
+			check = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, pstmt, null);
+		}
+		
+		return check;
+	}
+}

@@ -1,0 +1,16 @@
+package mov.com.controller;
+
+import java.util.Scanner;
+
+import mov.com.action.Action;
+
+public class FrontController {
+	
+	// FrontCotroller, 현재 action에 빨간 줄은 우리 student 패키지 것을 임포트 하라고 하는 것이므로 무시
+	public void process(Action action, Scanner sc) {
+
+		action.execute(sc);
+	}
+
+}
+

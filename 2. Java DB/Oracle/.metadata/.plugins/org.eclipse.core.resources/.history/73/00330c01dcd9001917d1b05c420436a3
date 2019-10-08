@@ -1,0 +1,41 @@
+프로젝트명 : 학적관리 프로그램
+프로젝트 개요 : 수강생들의 성적정보를 입력받아 처리한 후, 원하는 작업을 수행하여 그 결과를 추출하는 프로그램
+
+작업 순서
+	1. 데이터베이스 설계 : 테이블
+		CREATE TABLE student(
+			id varchar2(10) PRIMARY KEY,	// 학생들의 학번
+			name varchar2(20) NOT NULL,		// 학생 이름
+			kor number default 0,			// 초기값이 0이라는 의미
+			eng number default 0,
+			math number default 0
+		);
+		
+	2. 패키지 및 클래스의 구성
+		1) stu.com.db : 공통의 데이터베이스 관련 작업을 수행하는 객체를 담을 패키지
+			- JdbcUtils.java (드라이버 로딩, 연동 객체, 자원 관리 등)
+			
+		2) stu.com.dto : Model
+			- student.java : 한 명의 학생에 대한 정보를 객체화하는 클래스 
+		
+		3) stu.com.action
+			- Action interface
+				- AddAction.java : 새로운 학생을 등록하는 작업을 수행하는 클래스
+				- ModifyAction.java : 등록된 학생 정보를 수정하는 작업을 수행하는 클래스
+				- ViewAction.java : 전체 학생의 정보를 출력하는 작업을 수행
+				- DetailAction.java : 한 명의 학생에 대한 정보를 출력
+				- RemoveAction.java : 학생 정보를 삭제하는 작업을 수행
+				
+				
+	3. 입출력 형식
+		== < 학적 관리 프로그램 > ==
+		1. 학생 정보 등록
+		2. 학생 정보 수정
+		3. 학생 정보 출력
+		4. 전체 정보 출력
+		5. 학생 정보 삭제
+		6. 프로그램 종료
+		======================
+		메뉴 = 
+		
+		

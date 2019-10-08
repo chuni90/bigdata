@@ -1,0 +1,50 @@
+package servlet.lifecycle;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class CountServlet
+ */
+@WebServlet("/count")    // <-- 왼쪽 것이 xml의 매핑과정을 다 의미하는 것으로서 지우면 안 됨!!
+public class CountServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    
+	// 멤버필드
+	private int visitCount;
+	private FileInputStream fin = null;
+	private FileOutputStream fout = null;
+	
+	private String cf = "C:\\Users\\meganext\\Desktop\\Chun\\Oracle\\data\\counter.dat";
+	
+	
+	// 객체 생성 직후 호출되는 메서드
+	public void init() {
+		// 파일에 저장된 방문자 수를 읽어오는 작업을 수행한다.
+		
+	}
+	
+	// 객체 소멸 직후 호출되는 메서드
+	public void destroy() {
+		// 방문자 수를 파일에 출력하는 작업을 수행한다.
+	}
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	
+	}
+
+}
